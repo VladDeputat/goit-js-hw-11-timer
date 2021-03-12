@@ -4,11 +4,9 @@ const daysRef = document.querySelector('[data-value = "days"]');
 const hoursRef = document.querySelector('[data-value = "hours"]');
 const minsRef = document.querySelector('[data-value = "mins"]');
 const secsRef = document.querySelector('[data-value = "secs"]');
-const crBtn = document.querySelector('.crBtn');
 
 class CountdownTimer {
   constructor({ targetDate }) {
-    this.targetDate = targetDate;
     setInterval(() => {
       let time = targetDate - new Date();
       daysRef.textContent = String(
@@ -27,11 +25,7 @@ class CountdownTimer {
   }
 }
 
-crBtn.addEventListener('click', createTimer());
-
-function createTimer() {
-  new CountdownTimer({
-    selector: '#timer-1',
-    targetDate: new Date('Jul 17, 2021'),
-  });
-}
+new CountdownTimer({
+  selector: '#timer-1',
+  targetDate: new Date('Sep 28, 2021'),
+});
